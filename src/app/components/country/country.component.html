@@ -1,0 +1,101 @@
+<div class="container">
+  <div class="bg-faded p-4 my-4">
+    <div class="card-header" role="tab" id="headingOne">
+      <h5 class="mb-0">
+        <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Add Country</a>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne"
+         data-parent="#accordion">
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <input type="text" name="region" class="form-control" aria-describedby="emailHelp" placeholder="Region">
+            <input type="text" name="surfaceArea" class="form-control" aria-describedby="emailHelp" placeholder="Surface Area">
+            <input type="text" name="indepYear" class="form-control" aria-describedby="emailHelp" placeholder="Indep Year">
+            <input type="text" name="population" class="form-control" aria-describedby="emailHelp" placeholder="Population">
+            <input type="text" name="lifeExpectancy" class="form-control" aria-describedby="emailHelp" placeholder="Life Expectancy">
+            <input type="text" name="gnp" class="form-control" aria-describedby="emailHelp" placeholder="GNP">
+            <input type="text" name="gnpOld" class="form-control" aria-describedby="emailHelp" placeholder="GNPOld">
+            <input type="text" name="localName" class="form-control" aria-describedby="emailHelp" placeholder="Local Name">
+            <input type="text" name="governmentFrom" class="form-control" aria-describedby="emailHelp" placeholder="Government Form">
+            <input type="text" name="headOfState" class="form-control" aria-describedby="emailHelp" placeholder="Head Of State">
+            <input type="text" name="capital" class="form-control" aria-describedby="emailHelp" placeholder="Capital">
+            <input type="text" name="code2" class="form-control" aria-describedby="emailHelp" placeholder="Code2">
+          </div>
+          <div>
+            <button type="submit" class="btn btn-primary">Add</button>
+            <button type="submit" class="btn btn-primary">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="card-header" role="tab" id="headingTwo">
+      <h5 class="mb-0">
+        <a data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">Delete Country</a>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo"
+         data-parent="#accordion">
+      <div class="card-body">
+     <form>
+        <div class="form-group">
+          <input type="text"  name="deleteName" class="form-control" aria-describedby="emailHelp" placeholder="Name">
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary">Delete</button>
+        </div>
+        </form>
+      </div>
+    </div>
+
+
+    div class="row pt-4">
+    <div class="col-lg-12 table">
+      <table class="table-bordered table-hover table-responsive">
+        <thead>
+        <tr align="center">
+          <td>Code</td>
+          <td>Name</td>
+          <td>Continent</td>
+          <td>Region</td>
+          <td>SurfaceArea</td>
+          <td>IndepYear</td>
+          <td>Population</td>
+          <td>LifeExpectancy</td>
+          <td>GNP</td>
+          <td>GNPOld</td>
+          <td>LocalName</td>
+          <td>GovernmentForm</td>
+          <td>HeadOfState</td>
+          <td>Capital</td>
+          <td>Code2</td>
+        </tr>
+        </thead>
+        <tbody>
+          <tr>
+          <tr *ngFor="let country of countries">
+            <td>{{country.Code}}</td>
+            <td>{{country.Name}}</td>
+            <td>{{country.Continent}}</td>
+            <td>{{country.Region}}</td>
+            <td>{{country.SurfaceArea}}</td>
+            <td>{{country.IndepYear}}</td>
+            <td>{{country.Population}}</td>
+            <td>{{country.LifeExpectancy}}</td>
+            <td>{{country.GNP}}</td>
+            <td>{{country.GNPOld}}</td>
+            <td>{{country.LocalName}}</td>
+            <td>{{country.GovernmentForm}}</td>
+            <td>{{country.HeadOfState}}</td>
+            <td>{{country.Capital}}</td>
+            <td>{{country.Code2}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
