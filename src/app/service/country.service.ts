@@ -10,7 +10,7 @@ const httpOptions = {
 @Injectable()
 export class CountryService {
 
-  private CountriesUrl = 'http://localhost:3000/cities';  // URL to web api
+  private CountriesUrl = 'http://localhost:3000/countries';  // URL to web api
 
   constructor(private http: HttpClient) {
   }
@@ -26,14 +26,15 @@ export class CountryService {
   }
 
   /** DELETE: delete the hero from the server */
-  deleteCountry(id: number): Observable<Country> {
+  deleteCountry(id: string): Observable<Country> {
     const url = `${this.CountriesUrl}/${id}`;
     return this.http.delete<Country>(url, httpOptions);
   }
 
   /** PUT: update the hero on the server */
-  updateCountry(personal: Country): Observable<any> {
-    return this.http.put(this.CountriesUrl, personal, httpOptions);
+  updateCountry(id: string, personal: Country): Observable<any> {
+    const url = `${this.CountriesUrl}/${id}`;
+    return this.http.put(url, personal, httpOptions);
   }
 
 }

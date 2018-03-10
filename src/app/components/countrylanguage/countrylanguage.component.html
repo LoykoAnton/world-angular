@@ -10,15 +10,16 @@
     <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne"
          data-parent="#accordion">
       <div class="card-body">
-        <form>
+        <form (ngSubmit)="processAction()" #addLanguageForm="ngForm">
           <div class="form-group">
-            <input type="text" name="code" class="form-control" aria-describedby="emailHelp" placeholder="Code">
-            <input type="text" name="language" class="form-control" aria-describedby="emailHelp" placeholder="Language">
-            <select aria-describedby="emailHelp" type="text" name="isOfficial" class="form-control" placeholder="IsOfficial">
+            <input type="text" [(ngModel)]="language.language" [ngModelOptions]="{standalone: true}" class="form-control" aria-describedby="emailHelp" placeholder="Language">
+            <input type="text" [(ngModel)]="language.CountryCode" [ngModelOptions]="{standalone: true}" class="form-control" aria-describedby="emailHelp" placeholder="Code">
+            <select aria-describedby="emailHelp" type="text" [(ngModel)]="language.IsOfficial" [ngModelOptions]="{standalone: true}" class="form-control">
               <option selected>T</option>
               <option>F</option>
             </select>
-            <input type="text" name="percentage" class="form-control" aria-describedby="emailHelp" placeholder="Percentage">
+            <input type="text" [(ngModel)]="language.Percentage" [ngModelOptions]="{standalone: true}" class="form-control" aria-describedby="emailHelp"
+                   placeholder="Percentage">
           </div>
           <div>
             <button type="submit" class="btn btn-primary">Add/Update</button>
@@ -39,12 +40,12 @@
           </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let city of cities">
-              <td>{{language.CountryCode}}</td>
-              <td>{{language.Language}}</td>
-              <td>{{language.IsOfficial}}</td>
-              <td>{{language.Percentage}}</td>
-            </tr>
+          <tr *ngFor="let language of languages">
+            <td>{{language.CountryCode}}</td>
+            <td>{{language.language}}</td>
+            <td>{{language.IsOfficial}}</td>
+            <td>{{language.Percentage}}</td>
+          </tr>
           </tbody>
         </table>
       </div>

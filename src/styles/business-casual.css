@@ -8,9 +8,7 @@
 
 body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  background: url('../assets/img/bg.jpg') no-repeat center center fixed;
-  width: 1280px;
-  height: 769px;
+  background: url('../assets/img/bg.jpg') no-repeat center center;
   background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;

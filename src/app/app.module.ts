@@ -10,6 +10,8 @@ import {CountryComponent} from './components/country/country.component';
 import {CityComponent} from './components/city/city.component';
 import {CountrylanguageComponent} from './components/countrylanguage/countrylanguage.component';
 import {CityService} from './service/city.service';
+import {CountryService} from "./service/country.service";
+import {LanguageService} from "./service/language.service";
 
 
 @NgModule({
@@ -26,7 +28,7 @@ import {CityService} from './service/city.service';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [CityService],
+  providers: [CityService, CountryService, LanguageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -8,9 +8,9 @@ const httpOptions = {
 };
 
 @Injectable()
-export class CityService {
+export class LanguageService {
 
-  private LanguagesUrl = 'http://localhost:3000/countrylanguage';  // URL to web api
+  private LanguagesUrl = 'http://localhost:3000/languages';  // URL to web api
 
   constructor(private http: HttpClient) {
   }
@@ -25,15 +25,10 @@ export class CityService {
     return this.http.post<Language>(this.LanguagesUrl, employee, httpOptions);
   }
 
-  /** DELETE: delete the hero from the server */
-  deleteLanguage(id: number): Observable<Language> {
-    const url = `${this.LanguagesUrl}/${id}`;
-    return this.http.delete<Language>(url, httpOptions);
-  }
-
   /** PUT: update the hero on the server */
-  updateLanguage(personal: Language): Observable<any> {
-    return this.http.put(this.LanguagesUrl, personal, httpOptions);
+  updateLanguage(language: string, personal: Language): Observable<any> {
+    const url = `${this.LanguagesUrl}/${language}`;
+    return this.http.put(url, personal, httpOptions);
   }
 
 }

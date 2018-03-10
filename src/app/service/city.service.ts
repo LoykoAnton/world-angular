@@ -32,8 +32,9 @@ export class CityService {
   }
 
   /** PUT: update the hero on the server */
-  updateCity(personal: City): Observable<any> {
-    return this.http.put(this.CitiesUrl, personal, httpOptions);
+  updateCity(id: number, personal: City): Observable<any> {
+    const url = `${this.CitiesUrl}/${id}`;
+    return this.http.put(url, personal, httpOptions);
   }
 
 }

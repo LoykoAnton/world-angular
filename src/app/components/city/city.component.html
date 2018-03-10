@@ -9,12 +9,13 @@
     <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne"
          data-parent="#accordion">
       <div class="card-body">
-        <form>
+        <form (ngSubmit)="processAction()" #addCityForm="ngForm">
           <div class="form-group">
-            <input type="text" name="name" class="form-control" aria-describedby="emailHelp" placeholder="Name">
-            <input type="text" name="countryCode" class="form-control" aria-describedby="emailHelp" placeholder="Country Code">
-            <input type="text" name="district" class="form-control" aria-describedby="emailHelp" placeholder="District">
-            <input type="text" name="population" class="form-control" aria-describedby="emailHelp" placeholder="Population">
+            <input type="text" [(ngModel)]="city.ID" [ngModelOptions]="{standalone: true}" class="form-control" aria-describedby="emailHelp" placeholder="ID">
+            <input type="text" [(ngModel)]="city.Name" [ngModelOptions]="{standalone: true}" class="form-control" aria-describedby="emailHelp" placeholder="Name">
+            <input type="text" [(ngModel)]="city.CountryCode" [ngModelOptions]="{standalone: true}" class="form-control" aria-describedby="emailHelp" placeholder="Code">
+            <input type="text" [(ngModel)]="city.District" [ngModelOptions]="{standalone: true}" class="form-control" aria-describedby="emailHelp" placeholder="District">
+            <input type="text" [(ngModel)]="city.Population" [ngModelOptions]="{standalone: true}" class="form-control" aria-describedby="emailHelp" placeholder="Population">
           </div>
           <div>
             <button type="submit" class="btn btn-primary">Add</button>
@@ -32,9 +33,9 @@
     <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo"
          data-parent="#accordion">
       <div class="card-body">
-        <form>
+        <form (ngSubmit)="deleteCity()">
         <div class="form-group">
-          <input type="text" name="deleteName" class="form-control" aria-describedby="emailHelp" placeholder="Name">
+          <input type="text" [formControl]="id" name="deleteName" class="form-control" aria-describedby="emailHelp" placeholder="ID">
         </div>
         <div>
           <button type="submit" class="btn btn-primary">Delete</button>
